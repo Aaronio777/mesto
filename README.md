@@ -10,6 +10,6 @@ HTML5, CCS3, JavaScript
 
 **Проект**
 
-* [Ссылка на проект](https://aaronio777.github.io/mesto/)
+* [Ссылка на проект](https://aaronio777.github.io/mesto/index.html)
 
 
