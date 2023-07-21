@@ -40,7 +40,6 @@ function fillProfileForm() {
 editProfileButton.addEventListener("click", () => {
   openPopup(popupEdit);
   fillProfileForm();
-  toggleButtonState(inputList, saveButtonEdit, config);
 });
 
 closeEditProfileButton.addEventListener("click", () => {
@@ -50,9 +49,6 @@ closeEditProfileButton.addEventListener("click", () => {
 const openAddPopup = () => {
   popupAddForm.reset();
   inputList = Array.from(popupAddForm.querySelectorAll(".form__input"));
-  toggleButtonState(inputList, saveButtonAdd, config);
-  hideInputError(popupAddForm, popupInputPlace, config);
-  hideInputError(popupAddForm, popupInputImage, config);
   openPopup(popupAdd);
 };
 addButton.addEventListener("click", openAddPopup);
