@@ -26,102 +26,96 @@
         <button type="button" class="profile__add-button"></button>
       </section>
       <section class="elements">
-        <ul class="elements__card">
-          <li class="elements__card-item">
-            <img
-              class="elements__image"
-              src="./images/karachaevsk.png"
-              alt="Карачаевск"
-            />
+        <template id="elements__card">
+          <div class="elements__card-item">
+            <img src="#" alt="" class="elements__image" />
+            <button type="button" class="elements__delete-button"></button>
             <div class="elements__description">
-              <h2 class="elements__card-title">Карачаевск</h2>
+              <h2 class="elements__card-title"></h2>
               <button type="button" class="elements__heart-button"></button>
             </div>
-          </li>
-          <li class="elements__card-item">
-            <img
-              class="elements__image"
-              src="./images/elbrus.png"
-              alt="Эльбрус"
-            />
-            <div class="elements__description">
-              <h2 class="elements__card-title">Гора Эльбрус</h2>
-              <button type="button" class="elements__heart-button"></button>
-            </div>
-          </li>
-          <li class="elements__card-item">
-            <img
-              class="elements__image"
-              src="./images/dombay.png"
-              alt="Домбай"
-            />
-            <div class="elements__description">
-              <h2 class="elements__card-title">Домбай</h2>
-              <button type="button" class="elements__heart-button"></button>
-            </div>
-          </li>
-          <li class="elements__card-item">
-            <img
-              class="elements__image"
-              src="./images/elbrus.png"
-              alt="Эльбрус"
-            />
-            <div class="elements__description">
-              <h2 class="elements__card-title">Гора Эльбрус</h2>
-              <button type="button" class="elements__heart-button"></button>
-            </div>
-          </li>
-          <li class="elements__card-item">
-            <img
-              class="elements__image"
-              src="./images/dombay.png"
-              alt="Домбай"
-            />
-            <div class="elements__description">
-              <h2 class="elements__card-title">Домбай</h2>
-              <button type="button" class="elements__heart-button"></button>
-            </div>
-          </li>
-          <li class="elements__card-item">
-            <img
-              class="elements__image"
-              src="./images/karachaevsk.png"
-              alt="Карачаевск"
-            />
-            <div class="elements__description">
-              <h2 class="elements__card-title">Карачаевск</h2>
-              <button type="button" class="elements__heart-button"></button>
-            </div>
-          </li>
-        </ul>
+          </div>
+        </template>
       </section>
     </main>
+
     <footer class="footer">
-      <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+      <p lang="en" class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
-    <div class="popup">
-      <div class="popup__container">
+
+    <div class="popup popup-edit">
+      <div class="popup__container popup__container_edit">
         <button type="button" class="popup__button-close"></button>
         <h2 class="popup__header">Редактировать профиль</h2>
-        <form class="popup__form" name="popupForm">
-          <input
-            type="text"
-            name="name"
-            class="popup__input popup__input_type_name"
-            placeholder="Имя"
-            required
-          />
-          <input
-            type="text"
-            name="work"
-            class="popup__input popup__input_type_work"
-            placeholder="О себе"
-            required
-          />
-          <button type="submit" class="popup__button-save">Сохранить</button>
+        <form class="form" name="profile" id="form-edit" novalidate>
+          <label class="form__area">
+            <input
+              type="text"
+              name="name-input"
+              class="form__input"
+              id="name-input"
+              placeholder="Имя"
+            />
+            <span class="form__input-error name-input-error"></span>
+          </label>
+          <label class="form__area">
+            <input
+              type="text"
+              name="work-input"
+              class="form__input"
+              id="work-input"
+              placeholder="О себе"
+            />
+            <span class="form__input-error work-input-error"></span>
+          </label>
+          <button type="submit" class="form__button-save" id="edit-button">
+            Сохранить
+          </button>
         </form>
       </div>
     </div>
-    <script src="./scripts/index.js"></script>
+
+    <div class="popup popup-add">
+      <div class="popup__container">
+        <button type="button" class="popup__button-close"></button>
+        <h2 class="popup__header">Новое место</h2>
+        <form class="form" name="add-card" id="form-add" novalidate>
+          <label class="form__area">
+            <input
+              type="text"
+              name="place"
+              class="form__input"
+              id="place-input"
+              placeholder="Название"
+            />
+            <span class="form__input-error place-input-error"></span>
+          </label>
+          <label class="form__area">
+            <input
+              type="url"
+              name="image"
+              class="form__input"
+              id="image-input"
+              placeholder="Ссылка на картинку"
+            />
+            <span class="form__input-error image-input-error"></span>
+          </label>
+          <button type="submit" class="form__button-save" id="add-button">
+            Создать
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_image">
+      <div class="popup__container popup__container_open">
+        <img class="popup__picture" src="#" alt="" />
+        <h2 class="popup__title"></h2>
+        <button type="button" class="popup__button-close"></button>
+      </div>
+    </div>
+
+    <script src="./scripts/constants.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
   </body>
 </html>
