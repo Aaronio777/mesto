@@ -40,14 +40,14 @@
     </main>
 
     <footer class="footer">
-      <p lang="en" class="footer__copyright">&copy; 2020 Mesto Russia</p>
+      <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
     </footer>
 
     <div class="popup popup-edit">
       <div class="popup__container popup__container_edit">
         <button type="button" class="popup__button-close"></button>
         <h2 class="popup__header">Редактировать профиль</h2>
-        <form class="form" name="profile" id="form-edit">
+        <form class="form" name="profile" id="form-edit" novalidate>
           <label class="form__area">
             <input
               type="text"
@@ -55,7 +55,11 @@
               class="form__input"
               id="name-input"
               placeholder="Имя"
+              required
+              minlength="2"
+              maxlength="40"
             />
+            <span class="form__input-error name-input-error"></span>
           </label>
           <label class="form__area">
             <input
@@ -64,7 +68,11 @@
               class="form__input"
               id="work-input"
               placeholder="О себе"
+              required
+              minlength="2"
+              maxlength="200"
             />
+            <span class="form__input-error work-input-error"></span>
           </label>
           <button type="submit" class="form__button-save" id="edit-button">
             Сохранить
@@ -77,7 +85,7 @@
       <div class="popup__container">
         <button type="button" class="popup__button-close"></button>
         <h2 class="popup__header">Новое место</h2>
-        <form class="form" name="add-card" id="form-add">
+        <form class="form" name="add-card" id="form-add" novalidate>
           <label class="form__area">
             <input
               type="text"
@@ -85,7 +93,11 @@
               class="form__input"
               id="place-input"
               placeholder="Название"
+              minlength="2"
+              maxlength="30"
+              required
             />
+            <span class="form__input-error place-input-error"></span>
           </label>
           <label class="form__area">
             <input
@@ -94,7 +106,9 @@
               class="form__input"
               id="image-input"
               placeholder="Ссылка на картинку"
+              required
             />
+            <span class="form__input-error image-input-error"></span>
           </label>
           <button type="submit" class="form__button-save" id="add-button">
             Создать
@@ -113,5 +127,6 @@
 
     <script src="./scripts/constants.js"></script>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
