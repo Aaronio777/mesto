@@ -1,3 +1,5 @@
+"use strict";
+
 const openPopupButtonEdit = document.querySelector(`.profile__button-edit`);
 const editingPopup = document.querySelector(`.popup_edit`);
 const closePopupButton = document.querySelector(`.popup__close_edit`);
