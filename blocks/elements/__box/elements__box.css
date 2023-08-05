@@ -1,0 +1,15 @@
+.elements__box {
+  margin: 0;
+  display: grid;
+  position: relative;
+}
+
+@media screen and (max-width: 879px) {
+  .elements__box {
+    margin-bottom: 18px;
+  }
+
+  .elements__box:last-child {
+    margin-bottom: 0;
+  }
+}

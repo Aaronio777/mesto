@@ -1,0 +1,9 @@
+.profile__bio {
+  margin: auto;
+}
+
+@media screen and (max-width: 879px) {
+  .profile__bio {
+    margin: 0 0 30px;
+  }
+}

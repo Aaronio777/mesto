@@ -1,0 +1,9 @@
+.elements__signature {
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  min-height: 79px;
+  margin: 0;
+  border-radius: 0 0 10px 10px;
+}
