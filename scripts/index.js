@@ -141,7 +141,7 @@ function closeByEscape(evt) {
 
 function closeOnOverlay(evt) {
   if (evt.target.classList.contains(".popup_opened")) {
-    closePopup(popup);
+    closePopup();
   }
 }
 
