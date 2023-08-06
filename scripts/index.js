@@ -60,7 +60,9 @@ popupProfileForm.addEventListener(`submit`, function (event) {
 function openPopup(popup) {
   popup.classList.add(`popup_opened`);
   document.addEventListener("keydown", closeByEscape);
-  popup.addEventListener("mousedown", closeOnOverlay);
+  popup.addEventListener("mousedown", function (event) {
+    closeOnOverlay(event, popup);
+  });
 }
 
 function closePopup(popup) {
@@ -139,9 +141,9 @@ function closeByEscape(evt) {
   }
 }
 
-function closeOnOverlay(evt) {
-  if (evt.target.classList.contains(".popup_opened")) {
-    closePopup();
+function closeOnOverlay(evt, popup) {
+  if (evt.target.classList.contains("popup_opened")) {
+    closePopup(popup);
   }
 }
 
