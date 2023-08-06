@@ -117,7 +117,7 @@ initialCards.forEach((item) => {
 function addNewCard(e) {
   e.preventDefault();
 
-  newCard = {
+  const newCard = {
     name: cardNameInput.value,
     link: cardLinkInput.value,
   };
@@ -140,8 +140,7 @@ function closeByEscape(evt) {
 }
 
 function closeOnOverlay(evt) {
-  const popup = document.querySelector(`.popup_opened`);
-  if (evt.target === popup) {
+  if (evt.target.classList.contains(".popup_opened")) {
     closePopup(popup);
   }
 }
