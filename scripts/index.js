@@ -58,9 +58,9 @@ popupProfileForm.addEventListener(`submit`, function (event) {
 });
 
 function openPopup(popup) {
-  popup.classList.add('popup_opened');
-  document.addEventListener('keydown', closeByEscape);
-  popup.addEventListener('click', closeOnOverlay);
+  popup.classList.add("popup_opened");
+  document.addEventListener("keydown", closeByEscape);
+  popup.addEventListener("click", closeOnOverlay);
 }
 
 function closePopup(popup) {
