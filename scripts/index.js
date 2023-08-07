@@ -60,9 +60,7 @@ popupProfileForm.addEventListener(`submit`, function (event) {
 function openPopup(popup) {
   popup.classList.add(`popup_opened`);
   document.addEventListener("keydown", closeByEscape);
-  popup.addEventListener("mousedown", function (event) {
-    closeOnOverlay(event, popup);
-  });
+  popup.addEventListener("mousedown", closeOnOverlay);
 }
 
 function closePopup(popup) {
@@ -141,11 +139,12 @@ function closeByEscape(evt) {
   }
 }
 
-function closeOnOverlay(evt, popup) {
-  if (evt.target.classList.contains("popup_opened")) {
-    closePopup(popup);
-  }
-}
+function closeOnOverlay(evt) {
+  const popup = document.querySelector(`.popup_opened`);
+  if (evt.target === popup) {
+      closePopup(popup);
+  };
+};
 
 function activateButton(button) {
   button.removeAttribute("disabled");
