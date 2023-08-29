@@ -66,7 +66,7 @@ function openPopup(popup) {
 function closePopup(popup) {
   popup.classList.remove(`popup_opened`);
   document.removeEventListener("keydown", closeByEscape);
-  popup.removeEventListener("mousedown", closeOnOverlay);
+  popup.removeEventListener("click", closeOnOverlay);
 }
 
 popupButtonAdd.addEventListener(`click`, function () {
@@ -86,7 +86,6 @@ function addCard(item) {
   const buttonLike = card.querySelector(`.elements__like`);
   const buttonDelete = card.querySelector(`.elements__delete-button`);
 
-  formCard.reset();
   cardPhoto.src = item.link;
   cardPhoto.alt = item.name;
   cardName.textContent = item.name;
@@ -128,6 +127,7 @@ function addNewCard(e) {
 
 formCard.addEventListener(`submit`, addNewCard);
 
+formCard.reset();
 closingPopupButtonPhoto.addEventListener(`click`, function () {
   closePopup(popupPhoto);
 });
